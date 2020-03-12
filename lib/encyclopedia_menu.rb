@@ -3,33 +3,38 @@ require_relative 'view_monsters.rb'
 require_relative 'add_monster.rb'
 require_relative 'remove_monster'
 require_relative 'invalid_and_exit'
-
 require 'csv'
+require 'tty-prompt'
+require 'colorize'
+
+$prompt = TTY::Prompt.new
 
 system 'clear'
-puts "-" * 45
+puts "-".colorize(:red) * 45
 puts "Welcome to Monster Encyclopedia!"
-puts "-" * 45
-sleep 2
+puts "-".colorize(:red) * 45
 
 def menu()
   system 'clear'
-  puts "-" * 45
+  puts "-".colorize(:red) * 45
   puts "Welcome to the Monster Encyclopedia"
-  puts "What would you like to do?"
-  puts "-" * 45
-  puts "1. View all entries"
-  puts "2. Add a new monster to the encyclopedia"
-  puts "3. Remove a monster from the encyclopedia"
-  puts "4. Close encyclopedia"
+  puts "-".colorize(:red) * 45
+  input = $prompt.select("What would you like to do?") do |menu|
+    menu.choice name: "View all entries", value: 1
+    menu.choice name: "Add a new monster to the encyclopedia", value: 2
+    menu.choice name: "Remove a monster from the encyclopedia", value: 3
+    menu.choice name: "Close encyclopedia", value: 4
+  end
+  return input
 end
 
 while true
-  menu()
+  input = menu()
   monsters_array = []
-  case gets.chomp.to_i
+
+  case input
   when 1
-    view_monsters(monsters_array)
+    view_monsters()
   when 2
     add_monster(monsters_array)
   when 3

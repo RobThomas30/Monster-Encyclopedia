@@ -10,7 +10,7 @@ def remove_monster(monsters_array)
   system 'clear'
 
   monster.each do |thing|
-    puts '-' * 45
+    puts '-'.colorize(:red) * 45
     puts "Name: #{thing["name"]}"
     puts
     monster_names << thing["name"]
@@ -30,15 +30,15 @@ def remove_monster(monsters_array)
       data.write(table.to_csv)
     end
     system 'clear'
-    puts '-' * 45
+    puts '-'.colorize(:red) * 45
     puts "#{input} was deleted!"
-    puts '-' * 45
+    puts '-'.colorize(:red) * 45
     sleep 2
   else
     system 'clear'
-    puts '-' * 45
+    puts '-'.colorize(:red) * 45
     puts "No monster by that name..."
-    puts '-' * 45
+    puts '-'.colorize(:red) * 45
     sleep 2
   end
 end

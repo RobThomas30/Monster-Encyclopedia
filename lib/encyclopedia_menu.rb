@@ -5,7 +5,7 @@ require_relative 'remove_monster'
 require_relative 'invalid_and_exit'
 require 'csv'
 require 'tty-prompt'
-require 'colorize'
+# require 'colorize'
 
 $prompt = TTY::Prompt.new
 

@@ -1,4 +1,13 @@
 
+def invalid_input
+    system 'clear'
+    puts '-' * 45
+    puts "Please pick a number from the menu."
+    puts '-' * 45
+    sleep 3.0
+    system 'clear'
+end
+
 def exit_program()
     system 'clear'
     puts '-' * 45
@@ -11,13 +20,4 @@ def exit_program()
     # sleep 3.0
     # system "clear"
     exit
-end
-
-def invalid_input
-    system 'clear'
-    puts '-' * 45
-    puts "Please pick a number from the menu."
-    puts '-' * 45
-    sleep 3.0
-    system 'clear'
 end

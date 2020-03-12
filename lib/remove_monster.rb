@@ -21,7 +21,8 @@ def remove_monster(monsters_array)
 
   if monster_names.include?(input)
     table = CSV.table("data.csv")
-    table.delete_if do |row|
+    table.delete_if.with_index  do |row, index|
+      next if index.zero?
       row[0] == input
     end
 
@@ -29,11 +30,15 @@ def remove_monster(monsters_array)
       data.write(table.to_csv)
     end
     system 'clear'
+    puts '-' * 45
     puts "#{input} was deleted!"
+    puts '-' * 45
+    sleep 2
   else
     system 'clear'
+    puts '-' * 45
     puts "No monster by that name..."
+    puts '-' * 45
     sleep 2
   end
-
 end

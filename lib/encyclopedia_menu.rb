@@ -1,4 +1,3 @@
-system 'clear'
 
 require_relative 'view_monsters.rb'
 require_relative 'add_monster.rb'
@@ -6,10 +5,6 @@ require_relative 'remove_monster'
 require_relative 'invalid_and_exit'
 
 require 'csv'
-
-
-
-
 
 def menu()
   system 'clear'

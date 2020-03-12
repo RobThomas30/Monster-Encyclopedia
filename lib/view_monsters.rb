@@ -8,7 +8,7 @@ def view_monsters()
       monsters_array << monster
       system 'clear'
     end
-      monsters_array.sort_by! { |things| things["name"]}
+      monsters_array.sort_by! { |mon| mon["name"]}
       monsters_array.each do |monster|
       puts '-'.colorize(:red) * 45
       puts "Name:" + " #{monster["name"]}".colorize(:light_red)

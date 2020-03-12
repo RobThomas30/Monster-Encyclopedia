@@ -9,6 +9,7 @@ def remove_monster(monsters_array)
 
   system 'clear'
 
+  monster.sort_by! { |mon| mon["name"]}
   monster.each do |thing|
     puts '-'.colorize(:red) * 45
     puts "Name: #{thing["name"]}"

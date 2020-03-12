@@ -6,6 +6,7 @@ require_relative 'invalid_and_exit'
 require 'csv'
 require 'tty-prompt'
 require 'colorize'
+require 'artii'
 
 $prompt = TTY::Prompt.new
 
@@ -13,6 +14,10 @@ system 'clear'
 puts "-".colorize(:red) * 45
 puts "Welcome to Monster Encyclopedia!"
 puts "-".colorize(:red) * 45
+text = Artii::Base.new :font => 'epic'
+puts text.asciify('--M:E--').colorize(:color => :black, :background => :red)
+puts '-'.colorize(:light_red) * 45
+sleep 3
 
 def menu()
   system 'clear'

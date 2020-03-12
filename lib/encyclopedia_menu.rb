@@ -6,6 +6,12 @@ require_relative 'invalid_and_exit'
 
 require 'csv'
 
+system 'clear'
+puts "-" * 45
+puts "Welcome to Monster Encyclopedia!"
+puts "-" * 45
+sleep 2
+
 def menu()
   system 'clear'
   puts "-" * 45
